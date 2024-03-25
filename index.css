@@ -46,3 +46,31 @@
   font-weight: normal;
   font-style: normal;
 }
+
+:root {
+  --clr-neutral-100: hsl(0, 0, 2);
+  --clr-neutral-200: hsl(0, 0, 12);
+  --clr-neutral-300: hsl(0, 0, 18);
+  --clr-neutral-400: hsl(0, 0, 23);
+  --clr-neutral-500: hsl(0, 0, 51);
+  --clr-neutral-600: hsl(0, 0, 91);
+  --clr-neutral-700: hsl(0, 0, 96);
+  --clr-neutral-800: hsl(0, 0, 100);
+
+  --clr-accent-purple: hsl(274, 82, 60);
+  --clr-accent-error: hsl(0, 100, 66);
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  --ff-sans-serif: "Inter", sans-serif;
+  --ff-serif: "Lora", serif;
+  --ff-mono: "Inconsolata", monospace;
+
+  --fs-heading-l: 4rem;
+  --fs-heading-m: 1.5rem;
+  --fs-heading-s: 1.25rem;
+
+  --fs-body-m: 1.125rem;
+  --fs-body-s: 0.875rem;
+}
