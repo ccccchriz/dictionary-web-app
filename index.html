@@ -27,7 +27,7 @@
         >
           sans serif
         </button>
-        <fieldset class="header__fieldset">
+        <fieldset class="header__fieldset" id="font-fieldset">
           <legend class="visually-hidden">
             Select a font, gets applied automatically.
           </legend>
@@ -47,7 +47,13 @@
             <input type="radio" name="font" id="mono" />
           </label>
         </fieldset>
-        <button type="button" class="">Light</button>
+        <button
+          type="button"
+          class="header__theme-button"
+          id="theme-button"
+          aria-label="dark"
+          aria-live="polite"
+        ></button>
       </header>
       <main></main>
     </div>

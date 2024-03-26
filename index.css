@@ -165,8 +165,25 @@ body[data-font="mono"] {
 }
 
 body {
+  --clr-bg: var(--clr-neutral-100);
+  --clr-text: var(--clr-neutral-800);
+
+  --dropdown-shadow: rgba(0, 0, 0, 0.1);
+
   display: grid;
   justify-items: center;
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+}
+
+body:has([aria-label="dark"]) {
+  --clr-bg: var(--clr-neutral-800);
+  --clr-text: var(--clr-neutral-100);
+
+  --dropdown-shadow: var(--clr-accent-purple);
+
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
 }
 
 .container {
@@ -182,6 +199,7 @@ header {
 }
 
 .header__font {
+  color: var(--clr-text);
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -218,7 +236,7 @@ header {
 
   border: none;
   display: grid;
-  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 30px 0px var(--dropdown-shadow);
   width: max-content;
   padding: 1.5rem;
   padding-right: 4rem;
@@ -253,4 +271,25 @@ header {
 
 .header__label--mono {
   font-family: var(--ff-mono);
+}
+
+.header__theme-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.header__theme-button::after {
+  content: "";
+  display: block;
+  background-position: center;
+  background-size: 1.25rem 1.25rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-image: url(assets/images/icon-moon.svg);
+}
+
+.header__theme-button[aria-label="dark"]::after {
+  filter: brightness(0) saturate(100%) invert(34%) sepia(99%) saturate(2845%)
+    hue-rotate(255deg) brightness(95%) contrast(96%);
 }

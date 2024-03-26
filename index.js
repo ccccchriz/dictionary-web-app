@@ -1,13 +1,31 @@
+const fontButton = document.getElementById("font-button");
+
 ["sans-serif", "serif", "mono"].forEach((el) =>
   document.getElementById(el).addEventListener("change", () => {
     document.body.setAttribute("data-font", el);
-    document.getElementById("font-button").textContent = el.replace("-", " ");
+    fontButton.textContent = el.replace("-", " ");
   })
 );
 
-document.getElementById("font-button").addEventListener("click", (el) => {
-  el.target.setAttribute(
+window.addEventListener("click", () => {
+  fontButton.setAttribute("aria-expanded", "false");
+});
+
+document
+  .getElementById("font-fieldset")
+  .addEventListener("click", (e) => e.stopPropagation());
+
+fontButton.addEventListener("click", (event) => {
+  event.stopPropagation();
+  event.target.setAttribute(
     "aria-expanded",
-    !(el.target.getAttribute("aria-expanded") == "true")
+    !(event.target.getAttribute("aria-expanded") == "true")
+  );
+});
+
+document.getElementById("theme-button").addEventListener("click", (e) => {
+  e.target.setAttribute(
+    "aria-label",
+    e.target.getAttribute("aria-label") == "dark" ? "light" : "dark"
   );
 });
