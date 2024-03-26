@@ -77,49 +77,49 @@ h6 {
 
 @font-face {
   font-family: "Inconsolata";
-  src: url("assets/fonts/Inconsolata-Bold.woff2") format("woff2");
+  src: url("assets/fonts/inconsolata/Inconsolata-Bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Inconsolata";
-  src: url("assets/fonts/Inconsolata-Regular.woff2") format("woff2");
+  src: url("assets/fonts/inconsolata/Inconsolata-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Inter";
-  src: url("assets/fonts/Inter-Regular.woff2") format("woff2");
+  src: url("assets/fonts/inter/Inter-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Inter";
-  src: url("assets/fonts/Inter-Bold.woff2") format("woff2");
+  src: url("assets/fonts/inter/Inter-Bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Lora";
-  src: url("assets/fonts/Lora-BoldItalic.woff2") format("woff2");
+  src: url("assets/fonts/lora/Lora-BoldItalic.woff2") format("woff2");
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Lora";
-  src: url("assets/fonts/Lora-Bold.woff2") format("woff2");
+  src: url("assets/fonts/lora/Lora-Bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Lora";
-  src: url("assets/fonts/Lora-Regular.woff2") format("woff2");
+  src: url("assets/fonts/lora/Lora-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
@@ -150,4 +150,85 @@ h6 {
 
   --fs-body-m: 1.125rem;
   --fs-body-s: 0.875rem;
+}
+
+body[data-font="sans-serif"] {
+  font-family: var(--ff-sans-serif);
+}
+
+body[data-font="serif"] {
+  font-family: var(--ff-serif);
+}
+
+body[data-font="mono"] {
+  font-family: var(--ff-mono);
+}
+
+.container {
+  padding: 1.5rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.header__font {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: none;
+  background-color: transparent;
+  text-transform: capitalize;
+}
+
+.header__font::after {
+  display: block;
+  content: "";
+  background-image: url(/assets/images/icon-arrow-down.svg);
+  background-size: 12px 6px;
+  width: 12px;
+  height: 6px;
+}
+
+.header__font[aria-expanded="true"] + .header__fieldset {
+  visibility: visible;
+}
+
+.header__fieldset {
+  visibility: hidden;
+  position: absolute;
+  right: min(100px, 15vw);
+  top: 50px;
+
+  border: none;
+  display: grid;
+  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.1);
+  width: max-content;
+  padding: 1.5rem;
+  padding-right: 4rem;
+  border-radius: 1rem;
+  gap: 1rem;
+}
+
+.header__fieldset > label > input {
+  appearance: none;
+}
+
+.header__label {
+  font-weight: var(--fw-bold);
+  font-size: 1.25rem;
+}
+
+.header__label--sans-serif {
+  font-family: var(--ff-sans-serif);
+}
+
+.header__label--serif {
+  font-family: var(--ff-serif);
+}
+
+.header__label--mono {
+  font-family: var(--ff-mono);
 }

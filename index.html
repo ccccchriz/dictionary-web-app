@@ -1,14 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Dictionary web app</title>
-</head>
-<body>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-</body>
+    <title>Frontend Mentor | Dictionary web app</title>
+
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body data-font="sans-serif">
+    <div class="container">
+      <header>
+        <img src="assets/images/logo.svg" alt="Dictionary Logo" />
+        <button
+          type="button"
+          class="header__font"
+          id="font-button"
+          aria-expanded="false"
+        >
+          sans serif
+        </button>
+        <fieldset class="header__fieldset">
+          <legend class="visually-hidden">
+            Select a font, gets applied automatically.
+          </legend>
+          <label
+            for="sans-serif"
+            class="header__label header__label--sans-serif"
+          >
+            Sans Serif
+            <input type="radio" name="font" id="sans-serif" />
+          </label>
+          <label for="serif" class="header__label header__label--serif">
+            Serif
+            <input type="radio" name="font" id="serif" />
+          </label>
+          <label for="mono" class="header__label header__label--mono">
+            Mono
+            <input type="radio" name="font" id="mono" />
+          </label>
+        </fieldset>
+        <button type="button" class="">Light</button>
+      </header>
+      <main></main>
+    </div>
+  </body>
+  <script src="index.js"></script>
 </html>
