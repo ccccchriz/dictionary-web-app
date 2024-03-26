@@ -125,17 +125,17 @@ h6 {
 }
 
 :root {
-  --clr-neutral-100: hsl(0, 0, 2);
-  --clr-neutral-200: hsl(0, 0, 12);
-  --clr-neutral-300: hsl(0, 0, 18);
-  --clr-neutral-400: hsl(0, 0, 23);
-  --clr-neutral-500: hsl(0, 0, 51);
-  --clr-neutral-600: hsl(0, 0, 91);
-  --clr-neutral-700: hsl(0, 0, 96);
-  --clr-neutral-800: hsl(0, 0, 100);
+  --clr-neutral-800: hsl(0, 0%, 2%);
+  --clr-neutral-700: hsl(0, 0%, 12%);
+  --clr-neutral-600: hsl(0, 0%, 18%);
+  --clr-neutral-500: hsl(0, 0%, 23%);
+  --clr-neutral-400: hsl(0, 0%, 51%);
+  --clr-neutral-300: hsl(0, 0%, 91%);
+  --clr-neutral-200: hsl(0, 0%, 96%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
 
-  --clr-accent-purple: hsl(274, 82, 60);
-  --clr-accent-error: hsl(0, 100, 66);
+  --clr-accent-purple: hsl(274, 82%, 60%);
+  --clr-accent-error: hsl(0, 100%, 66%);
 
   --fw-regular: 400;
   --fw-bold: 700;
@@ -164,8 +164,15 @@ body[data-font="mono"] {
   font-family: var(--ff-mono);
 }
 
+body {
+  display: grid;
+  justify-items: center;
+}
+
 .container {
   padding: 1.5rem;
+  max-width: 46.0625rem;
+  width: 100%;
 }
 
 header {
@@ -181,6 +188,13 @@ header {
   border: none;
   background-color: transparent;
   text-transform: capitalize;
+  cursor: pointer;
+  font-weight: var(--fw-bold);
+  font-size: 0.875rem;
+  margin-left: auto;
+  border-right: 1px solid var(--clr-neutral-400);
+  padding-right: 1.625rem;
+  margin-right: 1.625rem;
 }
 
 .header__font::after {
@@ -212,13 +226,21 @@ header {
   gap: 1rem;
 }
 
+.header__fieldset > label {
+  cursor: pointer;
+}
+
+.header__fieldset > label:is(:hover, :focus-within) {
+  color: var(--clr-accent-purple);
+}
+
 .header__fieldset > label > input {
   appearance: none;
 }
 
 .header__label {
   font-weight: var(--fw-bold);
-  font-size: 1.25rem;
+  font-size: 0.875rem;
 }
 
 .header__label--sans-serif {
