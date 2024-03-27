@@ -1,9 +1,21 @@
+const theme = localStorage.getItem("theme");
+const font = localStorage.getItem("font");
+
+if (theme)
+  document.getElementById("theme-button").setAttribute("aria-label", theme);
+
 const fontButton = document.getElementById("font-button");
+
+if (font) {
+  document.body.setAttribute("data-font", font);
+  fontButton.textContent = font.replace("-", " ");
+}
 
 ["sans-serif", "serif", "mono"].forEach((el) =>
   document.getElementById(el).addEventListener("change", () => {
     document.body.setAttribute("data-font", el);
     fontButton.textContent = el.replace("-", " ");
+    localStorage.setItem("font", el);
   })
 );
 
@@ -24,13 +36,10 @@ fontButton.addEventListener("click", (event) => {
 });
 
 document.getElementById("theme-button").addEventListener("click", (e) => {
-  document
-    .getElementById("theme-button")
-    .setAttribute(
-      "aria-label",
-      document.getElementById("theme-button").getAttribute("aria-label") ==
-        "dark"
-        ? "light"
-        : "dark"
-    );
+  const newTheme =
+    document.getElementById("theme-button").getAttribute("aria-label") == "dark"
+      ? "light"
+      : "dark";
+  document.getElementById("theme-button").setAttribute("aria-label", newTheme);
+  localStorage.setItem("theme", newTheme);
 });
