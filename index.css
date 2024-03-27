@@ -274,6 +274,9 @@ header {
 }
 
 .header__theme-button {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -292,4 +295,30 @@ header {
 .header__theme-button[aria-label="dark"]::after {
   filter: brightness(0) saturate(100%) invert(34%) sepia(99%) saturate(2845%)
     hue-rotate(255deg) brightness(95%) contrast(96%);
+}
+
+.theme__con {
+  width: 2.5rem;
+  height: 1.25rem;
+  border-radius: 9999px;
+  background-color: var(--clr-neutral-400);
+  padding: 0.1875rem;
+  transition: 300ms;
+}
+
+.theme__circle {
+  margin-left: 0;
+  width: 0.875rem;
+  height: 0.875rem;
+  background-color: var(--clr-neutral-100);
+  border-radius: 9999px;
+  transition: 300ms;
+}
+
+.header__theme-button[aria-label="dark"] > .theme__con {
+  background-color: var(--clr-accent-purple);
+}
+
+.header__theme-button[aria-label="dark"] > div > .theme__circle {
+  margin-left: auto;
 }

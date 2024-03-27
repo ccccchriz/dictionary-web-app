@@ -24,8 +24,13 @@ fontButton.addEventListener("click", (event) => {
 });
 
 document.getElementById("theme-button").addEventListener("click", (e) => {
-  e.target.setAttribute(
-    "aria-label",
-    e.target.getAttribute("aria-label") == "dark" ? "light" : "dark"
-  );
+  document
+    .getElementById("theme-button")
+    .setAttribute(
+      "aria-label",
+      document.getElementById("theme-button").getAttribute("aria-label") ==
+        "dark"
+        ? "light"
+        : "dark"
+    );
 });
