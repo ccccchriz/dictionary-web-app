@@ -172,6 +172,7 @@ body {
   --clr-bg: var(--clr-neutral-100);
   --clr-bg-secondary: var(--clr-neutral-200);
   --clr-text: var(--clr-neutral-600);
+  --clr-text-secondary: var(--clr-neutral-400);
 
   --dropdown-shadow: rgba(0, 0, 0, 0.1);
 
@@ -185,7 +186,7 @@ body:has([aria-label="dark"]) {
   --clr-bg: var(--clr-neutral-800);
   --clr-bg-secondary: var(--clr-neutral-700);
   --clr-text: var(--clr-neutral-100);
-  --clr-text-secondary: var(--clr-neutral-600);
+  --clr-text-secondary: var(--clr-neutral-400);
 
   --dropdown-shadow: var(--clr-accent-purple);
 
