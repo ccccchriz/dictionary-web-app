@@ -8,6 +8,10 @@ const urlParams = new URLSearchParams(queryString);
 if (urlParams.has("search")) {
   const item = urlParams.get("search");
   if (item != "") {
+    searchInput.value = item;
+    fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${item}`)
+      .then((resp) => resp.json())
+      .then((data) => console.log(data));
   }
 }
 

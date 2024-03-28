@@ -75,6 +75,10 @@ h6 {
   overflow: hidden;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 @font-face {
   font-family: "Inconsolata";
   src: url("assets/fonts/inconsolata/Inconsolata-Bold.woff2") format("woff2");
@@ -167,7 +171,7 @@ body[data-font="mono"] {
 body {
   --clr-bg: var(--clr-neutral-100);
   --clr-bg-secondary: var(--clr-neutral-200);
-  --clr-text: var(--clr-neutral-800);
+  --clr-text: var(--clr-neutral-600);
 
   --dropdown-shadow: rgba(0, 0, 0, 0.1);
 
@@ -181,6 +185,7 @@ body:has([aria-label="dark"]) {
   --clr-bg: var(--clr-neutral-800);
   --clr-bg-secondary: var(--clr-neutral-700);
   --clr-text: var(--clr-neutral-100);
+  --clr-text-secondary: var(--clr-neutral-600);
 
   --dropdown-shadow: var(--clr-accent-purple);
 
@@ -355,6 +360,7 @@ header {
   background-color: transparent;
   border: none;
   color: var(--clr-text);
+  font-weight: var(--fw-bold);
 }
 
 .form__submit {
@@ -367,4 +373,21 @@ header {
 .form__error {
   font-size: 1rem;
   color: var(--clr-accent-error);
+}
+
+.not-found {
+  margin-top: 4rem;
+  display: grid;
+  gap: 1.5rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.not-found__emoji {
+  width: min-content;
+  font-size: 4rem;
+}
+
+.not-found__paragraph {
+  color: var(--clr-text-secondary);
 }
