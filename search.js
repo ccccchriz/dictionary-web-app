@@ -15,7 +15,19 @@ const displayNotFound = () => {
 const displayData = (data) => {
   console.log(data);
   found.classList.remove("hidden");
-  document.getElementById("word").textContent = data.word;
+  document.getElementById("top-word").textContent = data.word;
+
+  let phonetic = data.phonetics.filter((el) => el.audio != "")[0];
+
+  if (phonetic) {
+    document.getElementById("top-phonetics").textContent = phonetic.text;
+    document.getElementById("top-sound").addEventListener("click", () => {
+      new Audio(phonetic.audio).play();
+    });
+  } else {
+    document.getElementById("top-phonetics").textContent = data.phonetic;
+    document.getElementById("top-sound").classList.add("hidden");
+  }
 };
 
 if (urlParams.has("search")) {

@@ -392,3 +392,26 @@ header {
 .not-found__paragraph {
   color: var(--clr-text-secondary);
 }
+
+.found__top {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.top__word {
+  font-size: 2rem;
+}
+
+.top__phonetics {
+  font-size: var(--fs-body-m);
+  color: var(--clr-accent-purple);
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.top__button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  grid-row: 1 / 3;
+}
