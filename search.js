@@ -28,6 +28,32 @@ const displayData = (data) => {
     document.getElementById("top-phonetics").textContent = data.phonetic;
     document.getElementById("top-sound").classList.add("hidden");
   }
+
+  let list = document.getElementById("type-noun-list");
+
+  const nouns = data.meanings.filter((el) => el.partOfSpeech == "noun")[0];
+
+  if (nouns) {
+    nouns.definitions.forEach((el) => {
+      const listItem = document.createElement("li");
+      listItem.classList.add("type__list-item");
+      listItem.textContent = el.definition;
+      list.appendChild(listItem);
+    });
+  }
+
+  list = document.getElementById("type-verb-list");
+
+  const verbs = data.meanings.filter((el) => el.partOfSpeech == "verb")[0];
+
+  if (verbs) {
+    verbs.definitions.forEach((el) => {
+      const listItem = document.createElement("li");
+      listItem.classList.add("type__list-item");
+      listItem.textContent = el.definition;
+      list.appendChild(listItem);
+    });
+  }
 };
 
 if (urlParams.has("search")) {
