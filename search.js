@@ -40,6 +40,8 @@ const displayData = (data) => {
       listItem.textContent = el.definition;
       list.appendChild(listItem);
     });
+  } else {
+    document.getElementById("type-noun").classList.add("hidden");
   }
 
   list = document.getElementById("type-verb-list");
@@ -53,7 +55,57 @@ const displayData = (data) => {
       listItem.textContent = el.definition;
       list.appendChild(listItem);
     });
+  } else {
+    document.getElementById("type-verb").classList.add("hidden");
   }
+
+  list = document.getElementById("type-noun-synonyms-list");
+
+  let synonyms = nouns.synonyms;
+
+  synonyms.forEach((el) => {
+    document.getElementById("type-noun-synonyms").classList.remove("hidden");
+    const listItem = document.createElement("li");
+    listItem.classList.add("type__list-item");
+    listItem.textContent = el;
+    list.appendChild(listItem);
+  });
+
+  list = document.getElementById("type-verb-synonyms-list");
+
+  synonyms = verbs.synonyms;
+
+  synonyms.forEach((el) => {
+    document.getElementById("type-verb-synonyms").classList.remove("hidden");
+    const listItem = document.createElement("li");
+    listItem.classList.add("type__list-item");
+    listItem.textContent = el;
+    list.appendChild(listItem);
+  });
+
+  list = document.getElementById("type-noun-antonyms-list");
+
+  let antonyms = nouns.antonyms;
+
+  antonyms.forEach((el) => {
+    document.getElementById("type-noun-antonyms").classList.remove("hidden");
+    const listItem = document.createElement("li");
+    listItem.classList.add("type__list-item");
+    listItem.textContent = el;
+    list.appendChild(listItem);
+  });
+
+  list = document.getElementById("type-verb-antonyms-list");
+
+  antonyms = verbs.antonyms;
+
+  antonyms.forEach((el) => {
+    document.getElementById("type-verb-antonyms").classList.remove("hidden");
+    const listItem = document.createElement("li");
+    listItem.classList.add("type__list-item");
+    listItem.textContent = el;
+    list.appendChild(listItem);
+  });
 };
 
 if (urlParams.has("search")) {
