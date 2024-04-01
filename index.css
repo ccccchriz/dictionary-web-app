@@ -484,3 +484,37 @@ header {
 .type__list--secondary > ::marker {
   font-size: 0;
 }
+
+.type__source {
+  font-size: var(--fs-body-s);
+  font-weight: var(--fw-regular);
+  color: var(--clr-neutral-400);
+  text-decoration: underline;
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
+}
+
+.type__source::before {
+  content: "";
+  height: 1px;
+  width: 100%;
+  display: block;
+  background-color: var(--clr-line);
+  margin-bottom: 1.5rem;
+}
+
+.type__link {
+  color: var(--clr-text);
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.type__link::after {
+  display: block;
+  content: "";
+  background-image: url(assets/images/icon-new-window.svg);
+  width: 0.875rem;
+  height: 0.875rem;
+  background-size: 0.875rem 0.875rem;
+}

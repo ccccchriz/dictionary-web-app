@@ -110,6 +110,20 @@ const displayData = (data) => {
 
     found.appendChild(antonymList);
   });
+
+  const source = document.createElement("h3");
+  source.classList.add("type__source");
+  source.textContent = "Source";
+
+  found.appendChild(source);
+
+  const link = document.createElement("a");
+  link.classList.add("type__link");
+  link.setAttribute("href", data.sourceUrls[0]);
+  link.setAttribute("target", "_blank");
+  link.textContent = data.sourceUrls[0];
+
+  found.appendChild(link);
 };
 
 if (urlParams.has("search")) {
