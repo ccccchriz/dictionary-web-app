@@ -524,3 +524,53 @@ header {
 .type__link:is(:hover, :focus-visible) {
   color: var(--clr-accent-purple);
 }
+
+@media (min-width: 40rem) {
+  .header__font {
+    font-size: 1.125rem;
+  }
+
+  .form__input {
+    font-size: 1.25rem;
+  }
+
+  .top__word {
+    font-size: var(--fs-heading-l);
+  }
+
+  .top__phonetics {
+    font-size: var(--fs-heading-m);
+  }
+
+  .type__title {
+    font-size: var(--fs-heading-m);
+  }
+
+  .type__subtitle {
+    font-size: var(--fs-heading-s);
+  }
+
+  .type__list-item {
+    font-size: var(--fs-body-m);
+  }
+
+  .type__list--secondary {
+    font-size: var(--fs-heading-s);
+  }
+
+  .type__source {
+    font-size: var(--fs-body-s);
+  }
+
+  .type__link {
+    font-size: var(--fs-body-s);
+  }
+
+  .container {
+    padding: 4.25rem 2.5rem;
+  }
+
+  body {
+    padding-bottom: 0;
+  }
+}
