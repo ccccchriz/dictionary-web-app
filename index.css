@@ -185,6 +185,7 @@ body {
   justify-items: center;
   background-color: var(--clr-bg);
   color: var(--clr-text);
+  padding-bottom: 4rem;
 }
 
 body:has([aria-label="dark"]) {
@@ -430,6 +431,7 @@ header {
   gap: 1rem;
   font-size: 1.125rem;
   font-style: italic;
+  margin: 2rem 0;
 }
 
 .type__title::after {
@@ -438,4 +440,46 @@ header {
   height: 1px;
   width: 100%;
   background-color: var(--clr-line);
+}
+
+.type__subtitle {
+  color: var(--clr-neutral-400);
+  font-weight: var(--fw-regular);
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+
+.type__list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.type__list > ::marker {
+  color: var(--clr-accent-purple);
+}
+
+.type__list-con {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.type__list-item {
+  font-size: 0.9375rem;
+}
+
+.type__list-item--example {
+  color: var(--clr-neutral-400);
+}
+
+.type__list--secondary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  font-weight: var(--fw-bold);
+  color: var(--clr-accent-purple);
+}
+
+.type__list--secondary > ::marker {
+  font-size: 0;
 }

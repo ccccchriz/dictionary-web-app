@@ -53,16 +53,22 @@ const displayData = (data) => {
 
     el.definitions.forEach((el) => {
       const element = document.createElement("li");
-      element.classList.add("type__list-item");
 
       if (el.hasOwnProperty("example")) {
+        const div = document.createElement("div");
+        div.classList.add("type__list-con");
         const span = document.createElement("span");
         span.textContent = el.definition;
-        element.appendChild(span);
+        span.classList.add("type__list-item");
+        div.appendChild(span);
         const span2 = document.createElement("span");
         span2.textContent = `"${el.example}"`;
-        element.appendChild(span2);
+        span2.classList.add("type__list-item");
+        span2.classList.add("type__list-item--example");
+        div.appendChild(span2);
+        element.appendChild(div);
       } else {
+        element.classList.add("type__list-item");
         element.textContent = el.definition;
       }
       list.appendChild(element);
