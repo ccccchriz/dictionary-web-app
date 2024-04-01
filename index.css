@@ -215,6 +215,8 @@ header {
   display: flex;
   justify-content: space-between;
   position: relative;
+  flex-wrap: wrap;
+  gap: 1.625rem;
 }
 
 .header__font {
@@ -231,7 +233,6 @@ header {
   margin-left: auto;
   border-right: 1px solid var(--clr-neutral-400);
   padding-right: 1.625rem;
-  margin-right: 1.625rem;
 }
 
 .header__font::after {
@@ -504,12 +505,15 @@ header {
 }
 
 .type__link {
-  display: block;
+  display: inline-block;
   width: max-content;
   color: var(--clr-text);
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  word-break: break-all;
+  width: 100%;
+  overflow: hidden;
 }
 
 .type__link::after {
