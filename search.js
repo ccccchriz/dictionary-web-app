@@ -29,82 +29,80 @@ const displayData = (data) => {
     document.getElementById("top-sound").classList.add("hidden");
   }
 
-  let list = document.getElementById("type-noun-list");
+  data.meanings.forEach((el) => {
+    const element = document.createElement("div");
+    element.classList.add("found__type");
+    element.id = `type-${el.partOfSpeech}`;
 
-  const nouns = data.meanings.filter((el) => el.partOfSpeech == "noun")[0];
+    found.appendChild(element);
 
-  if (nouns) {
-    nouns.definitions.forEach((el) => {
-      const listItem = document.createElement("li");
-      listItem.classList.add("type__list-item");
-      listItem.textContent = el.definition;
-      list.appendChild(listItem);
+    const title = document.createElement("h3");
+    title.classList.add("type__title");
+    title.textContent = el.partOfSpeech;
+
+    element.appendChild(title);
+
+    const meaning = document.createElement("h4");
+    meaning.classList.add("type__subtitle");
+    meaning.textContent = "Meaning";
+
+    element.appendChild(meaning);
+
+    const list = document.createElement("ul");
+    list.classList.add(`type__list`);
+
+    el.definitions.forEach((el) => {
+      const element = document.createElement("li");
+      element.classList.add("type__list-item");
+
+      if (el.hasOwnProperty("example")) {
+        const span = document.createElement("span");
+        span.textContent = el.definition;
+        element.appendChild(span);
+        const span2 = document.createElement("span");
+        span2.textContent = `"${el.example}"`;
+        element.appendChild(span2);
+      } else {
+        element.textContent = el.definition;
+      }
+      list.appendChild(element);
     });
-  } else {
-    document.getElementById("type-noun").classList.add("hidden");
-  }
 
-  list = document.getElementById("type-verb-list");
+    found.appendChild(list);
 
-  const verbs = data.meanings.filter((el) => el.partOfSpeech == "verb")[0];
+    const synonyms = document.createElement("h4");
+    synonyms.classList.add("type__subtitle");
+    synonyms.textContent = "Synonyms";
 
-  if (verbs) {
-    verbs.definitions.forEach((el) => {
-      const listItem = document.createElement("li");
-      listItem.classList.add("type__list-item");
-      listItem.textContent = el.definition;
-      list.appendChild(listItem);
+    if (el.synonyms != 0) found.appendChild(synonyms);
+
+    const synonymList = document.createElement("ul");
+    synonymList.classList.add(`type__list--secondary`);
+
+    el.synonyms.forEach((el) => {
+      const item = document.createElement("li");
+      item.textContent = el;
+      synonymList.appendChild(item);
     });
-  } else {
-    document.getElementById("type-verb").classList.add("hidden");
-  }
 
-  list = document.getElementById("type-noun-synonyms-list");
+    found.appendChild(synonymList);
 
-  let synonyms = nouns.synonyms;
+    const antonyms = document.createElement("h4");
+    antonyms.classList.add("type__subtitle");
+    antonyms.textContent = "Antonyms";
 
-  synonyms.forEach((el) => {
-    document.getElementById("type-noun-synonyms").classList.remove("hidden");
-    const listItem = document.createElement("li");
-    listItem.classList.add("type__list-item");
-    listItem.textContent = el;
-    list.appendChild(listItem);
-  });
+    if (el.antonyms != 0) found.appendChild(antonyms);
 
-  list = document.getElementById("type-verb-synonyms-list");
+    const antonymList = document.createElement("ul");
+    antonymList.classList.add(`type__list--secondary`);
 
-  synonyms = verbs.synonyms;
+    el.antonyms.forEach((el) => {
+      const item = document.createElement("li");
+      item.textContent = el;
+      antonymList.appendChild(item);
+    });
 
-  synonyms.forEach((el) => {
-    document.getElementById("type-verb-synonyms").classList.remove("hidden");
-    const listItem = document.createElement("li");
-    listItem.classList.add("type__list-item");
-    listItem.textContent = el;
-    list.appendChild(listItem);
-  });
-
-  list = document.getElementById("type-noun-antonyms-list");
-
-  let antonyms = nouns.antonyms;
-
-  antonyms.forEach((el) => {
-    document.getElementById("type-noun-antonyms").classList.remove("hidden");
-    const listItem = document.createElement("li");
-    listItem.classList.add("type__list-item");
-    listItem.textContent = el;
-    list.appendChild(listItem);
-  });
-
-  list = document.getElementById("type-verb-antonyms-list");
-
-  antonyms = verbs.antonyms;
-
-  antonyms.forEach((el) => {
-    document.getElementById("type-verb-antonyms").classList.remove("hidden");
-    const listItem = document.createElement("li");
-    listItem.classList.add("type__list-item");
-    listItem.textContent = el;
-    list.appendChild(listItem);
+    found.appendChild(antonymList);
   });
 };
 
