@@ -574,3 +574,10 @@ header {
     padding-bottom: 0;
   }
 }
+
+@media (min-width: 60rem) {
+  .container {
+    padding: 3.625rem 0;
+    gap: 3.21875rem;
+  }
+}
