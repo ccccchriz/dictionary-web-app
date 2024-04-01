@@ -185,7 +185,7 @@ body {
   justify-items: center;
   background-color: var(--clr-bg);
   color: var(--clr-text);
-  padding-bottom: 4rem;
+  padding-bottom: 5.3125rem;
 }
 
 body:has([aria-label="dark"]) {
@@ -504,6 +504,8 @@ header {
 }
 
 .type__link {
+  display: block;
+  width: max-content;
   color: var(--clr-text);
   display: flex;
   gap: 0.5rem;
@@ -517,4 +519,8 @@ header {
   width: 0.875rem;
   height: 0.875rem;
   background-size: 0.875rem 0.875rem;
+}
+
+.type__link:is(:hover, :focus-visible) {
+  color: var(--clr-accent-purple);
 }
