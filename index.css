@@ -452,6 +452,7 @@ header {
 .type__list {
   display: grid;
   gap: 0.75rem;
+  padding-left: 1.5rem;
 }
 
 .type__list > ::marker {
