@@ -20,7 +20,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jepg)
+![](./screenshot.jpeg)
 
 ### Links
 
