@@ -13,7 +13,6 @@ const displayNotFound = () => {
 };
 
 const displayData = (data) => {
-  console.log(data);
   found.classList.remove("hidden");
   document.getElementById("top-word").textContent = data.word;
 
